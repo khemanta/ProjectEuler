@@ -1,60 +1,147 @@
-%=======================02-713 LaTeX template, following the 15-210 template==================
+%-----------------------------------------------------------------------
+% Beginning of article-template.tex
+%-----------------------------------------------------------------------
 %
-% You don't need to use LaTeX or this template, but you must turn your homework in as
-% a typeset PDF somehow.
+%    This is a template file for proceedings articles prepared with AMS
+%    author packages, for use with AMS-LaTeX.
 %
-% How to use:
-%    1. Update your information in section "A" below
-%    2. Write your answers in section "B" below. Precede answers for all 
-%       parts of a question with the command "\question{n}{desc}" where n is
-%       the question number and "desc" is a short, one-line description of 
-%       the problem. There is no need to restate the problem.
-%    3. If a question has multiple parts, precede the answer to part x with the
-%       command "\part{x}".
-%    4. If a problem asks you to design an algorithm, use the commands
-%       \algorithm, \correctness, \runtime to precede your discussion of the 
-%       description of the algorithm, its correctness, and its running time, respectively.
-%    5. You can include graphics by using the command \includegraphics{FILENAME}
+%    Templates for various common text, math and figure elements are
+%    given following the \end{document} line.
 %
-\documentclass[11pt]{article}
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage{graphicx}
-\usepackage[margin=1in]{geometry}
-\usepackage{fancyhdr}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{5pt plus 1pt}
-\setlength{\headheight}{13.6pt}
-\newcommand\question[2]{\vspace{.25in}\hrule\textbf{#1: #2}\vspace{.5em}\hrule\vspace{.10in}}
-\renewcommand\part[1]{\vspace{.10in}\textbf{(#1)}}
-\newcommand\algorithm{\vspace{.10in}\textbf{Algorithm: }}
-\newcommand\correctness{\vspace{.10in}\textbf{Correctness: }}
-\newcommand\runtime{\vspace{.10in}\textbf{Running time: }}
-\pagestyle{fancyplain}
-\lhead{\textbf{\NAME\ (\ANDREWID)}}
-\chead{\textbf{HW\HWNUM}}
-\rhead{02-713, \today}
-\begin{document}\raggedright
-%Section A==============Change the values below to match your information==================
-\newcommand\NAME{Carl Kingsford}  % your name
-\newcommand\ANDREWID{ckingsf}     % your andrew id
-\newcommand\HWNUM{1}              % the homework number
-%Section B==============Put your answers to the questions below here=======================
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% no need to restate the problem --- the graders know which problem is which,
-% but replacing "The First Problem" with a short phrase will help you remember
-% which problem this is when you read over your homeworks to study.
+%    Remove any commented or uncommented macros you do not use.
 
-\question{1}{The First Problem} 
+%    Replace amsproc by the name of the author package.
+\documentclass[12pt]{amsproc}
 
-\part{a} \algorithm Describe algorithm here
+%    If you need symbols beyond the basic set, uncomment this command.
+%\usepackage{amssymb}
 
-\correctness This is an argument  that this algorithm returns the correct answer.
+%    If your article includes graphics, uncomment this command.
+%\usepackage{graphicx}
 
-\runtime Describe here, in big-Oh, the running time and your reasoning for it.
+%    If the article includes commutative diagrams, ...
+%\usepackage[cmtip,all]{xy}
 
-\part{b}
+%    Include other referenced packages here.
+\usepackage{}
 
-\question{2}{The second problem}
+%    Update the information and uncomment if AMS is not the copyright
+%    holder.
+%\copyrightinfo{2009}{American Mathematical Society}
 
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
+
+\begin{document}
+
+% \title[short text for running head]{full title}
+\title{\large A mathematical proof of greatest prime factor of  $n$  is less than square root of  $n$, i.e. prime\_factor(n) $<$ $\sqrt{n}$}
+
+%    Only \author and \address are required; other information is
+%    optional.  Remove any unused author tags.
+
+%    author one information
+% \author[short version for running head]{name for top of paper}
+\author{Kumar Hemant}
+\address{}
+\curraddr{}
+\email{}
+\thanks{}
+
+%   author two information
+% \author{}
+% \address{}
+% \curraddr{}
+% \email{}
+% \thanks{}
+
+\subjclass[2000]{Primary }
+%    The 2010 edition of the Mathematics Subject Classification is
+%    now available.  If you are citing a classification from the
+%    new scheme, use the following input coding instead.
+%\subjclass[2010]{Primary }
+
+\date{}
+
+\begin{abstract}
+Provided here is a mathematical proof of a lemma that, greatest prime factor of a composite number is less than or equal to square root of itself.
+\end{abstract}
+
+\maketitle
+
+%    Text of article.
+
+%    Bibliographies can be prepared with BibTeX using amsplain,
+%    amsalpha, or (for "historical" overviews) natbib style.
+\bibliographystyle{amsplain}
+%    Insert the bibliography data here.
 
 \end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%    Templates for common elements of an article; for additional
+%    information, see the AMS-LaTeX instructions manual, instr-l.pdf,
+%    included in every AMS author package, and the amsthm user's guide,
+%    linked from http://www.ams.org/tex/amslatex.html .
+
+%    Section headings
+\section{}
+\subsection{}
+
+%    Ordinary theorem and proof
+\begin{theorem}[Greatest Prime Factor]
+For an integer $n \geq 2$, let $gpf(x)$ denote the greatest prime factor of $n$, i.e., the number $p_{k}$ in the factorization
+\begin{equation}
+n = p_{1}^{a_{1}} ...... p_{k}^{a_{k}}, 
+with p_{i} < p_{j} for i < j. For n = 2,3,..., the first few are 2, 3, 5, 6, 7, 10, 11, 13, 14, 15, 17, 19, 21, ...
+
+The probability that a random positive is $\sqrt{n}$ rough is $ln2$
+\end{equation}
+
+\end{theorem}
+
+\begin{proof}[Optional replacement proof heading]
+% text of proof
+\end{proof}
+
+%    Figure insertion; default placement is top; if the figure occupies
+%    more than 75% of a page, the [p] option should be specified.
+\begin{figure}
+\includegraphics{filename}
+\caption{text of caption}
+\label{}
+\end{figure}
+
+%    Mathematical displays; for additional information, see the amsmath
+%    user's guide, linked from http://www.ams.org/tex/amslatex.html .
+
+% Numbered equation
+\begin{equation}
+\end{equation}
+
+% Unnumbered equation
+\begin{equation*}
+\end{equation*}
+
+% Aligned equations
+\begin{align}
+  &  \\
+  &
+\end{align}
+
+%-----------------------------------------------------------------------
+% End of article-template.tex
+%-----------------------------------------------------------------------
